@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Sutta Bar® | Cuddle The Kulhad | India's Biggest Chai Chain</title>
+    <meta name="description" content="Chai Sutta Bar - India's largest chai chain with 600+ outlets. Serving 6+ Lakh Kulhad Chai daily across 370+ cities worldwide. Taste the authentic Kulhad experience.">
+    <meta name="keywords" content="Chai Sutta Bar, Kulhad Chai, CSB, Tea Franchise, Indian Chai, Biggest Chai Chain">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        :root {
+            --primary: #D4A373;
+            --primary-dark: #BC8A5F;
+            --secondary: #FAEDCD;
+            --accent: #CCD5AE;
+            --dark: #1a1a1a;
+            --light: #FEFAE0;
+            --terracotta: #E07A5F;
+            --kulhad: #C17A47;
+            --text-gray: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 26, 26, 0.98);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 0.8rem 5%;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 25px;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
+        }
+
+        .mobile-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=1920&h=1080&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23D4A373" stroke-width="0.3" opacity="0.1"/></svg>');
+            background-size: 80px;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(224, 122, 95, 0.9);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(224, 122, 95, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(224, 122, 95, 0); }
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 900;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary);
+            display: block;
+            font-size: 3rem;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 163, 115, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem 5%;
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(212, 163, 115, 0.3);
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: -2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Section Common Styles */
+        section {
+            padding: 6rem 5%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--terracotta);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-tag::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--terracotta);
+            margin: 0.5rem auto 0;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .experience-card {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--terracotta);
+            color: white;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(224, 122, 95, 0.4);
+            animation: float 6s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .experience-card .years {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .experience-card .text {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.3rem;
+        }
+
+        .about-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .founders {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .founder {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .founder:hover {
+            transform: translateY(-5px);
+        }
+
+        .founder-img {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--terracotta));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.8rem;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(212, 163, 115, 0.3);
+        }
+
+        .founder-name {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .founder-role {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.2rem;
+        }
+
+        /* Menu Section */
+        .menu {
+            background: linear-gradient(to bottom, var(--light), white);
+            position: relative;
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--dark);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 163, 115, 0.3);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .menu-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--terracotta);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 2;
+            box-shadow: 0 3px 10px rgba(224, 122, 95, 0.3);
+        }
+
+        .menu-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--secondary), var(--light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .menu-content {
+            padding: 1.8rem;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.8rem;
+        }
+
+        .menu-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .menu-price {
+            color: var(--terracotta);
+            font-weight: 800;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .menu-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background: var(--dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23D4A373" stroke-width="0.5" opacity="0.05"/></svg>');
+            background-size: 120px;
+        }
+
+        .why-us .section-title {
+            color: white;
+        }
+
+        .why-us .section-subtitle {
+            color: #aaa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--terracotta));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(212, 163, 115, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .feature-card p {
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Franchise Section */
+        .franchise {
+            background: linear-gradient(135deg, var(--secondary), var(--light));
+            position: relative;
+        }
+
+        .franchise-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .franchise-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .franchise-info p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .franchise-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .franchise-stat {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .franchise-stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--terracotta);
+            display: block;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .franchise-stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        .investment-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+        }
+
+        .investment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--terracotta));
+        }
+
+        .investment-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .investment-amount {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin: 1rem 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .investment-note {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .process-steps {
+            margin-top: 4rem;
+        }
+
+        .process-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--terracotta));
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 900;
+            color: var(--primary);
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .step-text {
+            font-size: 0.85rem;
+            color: #555;
+            font-weight: 500;
+            max-width: 120px;
+            margin: 0 auto;
+        }
+
+        /* Locations */
+        .locations {
+            background: white;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .location-card {
+            background: var(--light);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .location-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .location-header i {
+            font-size: 2rem;
+        }
+
+        .location-header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .location-body {
+            padding: 1.8rem;
+        }
+
+        .location-list {
+            list-style: none;
+        }
+
+        .location-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .location-list li:last-child {
+            border-bottom: none;
+        }
+
+        .location-list i {
+            color: var(--terracotta);
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--secondary), var(--light));
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 6rem;
+            color: var(--secondary);
+            font-family: serif;
+            line-height: 1;
+            opacity: 0.5;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--terracotta));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .author-info p {
+            color: #888;
+            font-size: 0.9rem;
+            margin: 0.2rem 0 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+            position: relative;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item div h4 {
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .contact-item div p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-form-wrapper {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: inherit;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 5% 2rem;
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #999;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom i {
+            color: var(--terracotta);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h1 .highlight {
+                font-size: 2rem;
+            }
+
+            .stats-bar {
+                gap: 2rem;
+                padding: 2rem 5%;
+            }
+
+            .stat-item::after {
+                display: none;
+            }
+
+            .about-grid,
+            .franchise-content,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .experience-card {
+                width: 140px;
+                height: 140px;
+                bottom: -20px;
+                right: -10px;
+            }
+
+            .experience-card .years {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .steps::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .investment-amount {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Animations */
+        [data-aos] {
+            opacity: 0;
+            transition-property: opacity, transform;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+
+        .kulhad-float {
+            animation: kulhadFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes kulhadFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">CHAI SUTTA BAR</span>
+                    <span class="logo-tagline">Cuddle The Kulhad</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#franchise">Franchise</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-fire"></i> India's Biggest Chai Chain
+            </div>
+            <h1>
+                Cuddle The
+                <span class="highlight">Kulhad</span>
+            </h1>
+            <p class="hero-subtitle">
+                Serving 6+ Lakh Kulhad Chai daily across 600+ outlets in 370+ cities worldwide. 
+                Experience the authentic taste of India in every sip.
+            </p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-book-open"></i> Explore Menu
+                </a>
+                <a href="#franchise" class="btn btn-secondary">
+                    <i class="fas fa-handshake"></i> Own a Franchise
+                </a>
+            </div>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+                <span class="stat-number">600+</span>
+                <span class="stat-label">Outlets</span>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <span class="stat-number">370+</span>
+                <span class="stat-label">Cities</span>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <span class="stat-number">6L+</span>
+                <span class="stat-label">Daily Cups</span>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Countries</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Story</span>
+                <h2 class="section-title">Brewing Success Since 2016</h2>
+                <p class="section-subtitle">
+                    From a small tea stall in Indore to India's largest chai chain - a journey of passion, tradition, and innovation.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-wrapper" data-aos="fade-right">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&h=600&fit=crop" alt="Chai Sutta Bar Founders">
+                    </div>
+                    <div class="experience-card">
+                        <span class="years">9+</span>
+                        <span class="text">Years of<br>Excellence</span>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h3>A 100-Crore Success Story Without External Investment</h3>
+                    <p>
+                        Chai Sutta Bar was founded in 2016 by two young and passionate entrepreneurs, 
+                        <strong>Anubhav Dubey</strong> and <strong>Anand Nayak</strong>, in Indore, Madhya Pradesh. 
+                        What started with a humble investment of ₹2 lakhs has now grown into a 100+ crore brand.
+                    </p>
+                    <p>
+                        Our vision is simple yet profound - to serve India's most loved beverage 'Chai' in the most 
+                        eco-friendly way possible. By using traditional Kulhads (earthen cups), we not only preserve 
+                        the authentic taste but also support local artisans and reduce plastic waste.
+                    </p>
+                    <p>
+                        Despite our name, we are a <strong>smoke-free and alcohol-free</strong> establishment, 
+                        creating a bar-like ambiance where youth can connect, converse, and create memories over a perfect cup of tea.
+                    </p>
+                    
+                    <div class="founders">
+                        <div class="founder">
+                            <div class="founder-img">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="founder-name">Anubhav Dubey</div>
+                            <div class="founder-role">Co-Founder & CEO</div>
+                        </div>
+                        <div class="founder">
+                            <div class="founder-img">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="founder-name">Anand Nayak</div>
+                            <div class="founder-role">Co-Founder</div>
+                        </div>
+                        <div class="founder">
+                            <div class="founder-img">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="founder-name">Rahul Patidar</div>
+                            <div class="founder-role">Managing Director</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Menu</span>
+                <h2 class="section-title">Taste The Tradition</h2>
+                <p class="section-subtitle">
+                    Authentic flavors served in traditional Kulhads. Every item is crafted with love and the finest ingredients.
+                </p>
+            </div>
+            
+            <div class="menu-categories" data-aos="fade-up">
+                <button class="category-btn active" onclick="filterMenu('all')">All Items</button>
+                <button class="category-btn" onclick="filterMenu('chai')">Kulhad Chai</button>
+                <button class="category-btn" onclick="filterMenu('coffee')">Coffee</button>
+                <button class="category-btn" onclick="filterMenu('bites')">Bites</button>
+                <button class="category-btn" onclick="filterMenu('maggie')">Maggie</button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid">
+                <!-- Chai Items -->
+                <div class="menu-item" data-category="chai" data-aos="fade-up">
+                    <span class="menu-badge">Bestseller</span>
+                    <div class="menu-image">
+                        <i class="fas fa-mug-hot" style="color: var(--terracotta);"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Kadak Kulhad Chai</h3>
+                            <span class="menu-price">₹49</span>
+                        </div>
+                        <p class="menu-desc">Our signature masala chai brewed with premium Assam tea and proprietary chai masala, served in traditional earthen kulhads.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="chai" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-image">
+                        <i class="fas fa-leaf" style="color: var(--accent);"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Green Tea</h3>
+                            <span class="menu-price">₹59</span>
+                        </div>
+                        <p class="menu-desc">Refreshing green tea with subtle flavors, perfect for health-conscious tea lovers.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="chai" data-aos="fade-up" data-aos-delay="200">
+                    <span class="menu-badge">Popular</span>
+                    <div class="menu-image">
+                        <i class="fas fa-candy-cane" style="color: #8B4513;"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Chocolate Tea</h3>
+                            <span class="menu-price">₹69</span>
+                        </div>
+                        <p class="menu-desc">A unique fusion of rich chocolate and aromatic tea - a crowd favorite among youth.</p>
+                    </div>
+                </div>
+
+                <!-- Coffee Items -->
+                <div class="menu-item" data-category="coffee" data-aos="fade-up">
+                    <div class="menu-image">
+                        <i class="fas fa-coffee" style="color: #6F4E37;"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Kulhad Coffee</h3>
+                            <span class="menu-price">₹79</span>
+                        </div>
+                        <p class="menu-desc">Rich, creamy coffee served in kulhad for that earthy aroma and authentic taste.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="coffee" data-aos="fade-up" data-aos-delay="100">
+                    <span class="menu-badge">Special</span>
+                    <div class="menu-image">
+                        <i class="fas fa-glass-whiskey" style="color: #D2691E;"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Irish Coffee (0% Alcohol)</h3>
+                            <span class="menu-price">₹99</span>
+                        </div>
+                        <p class="menu-desc">Flavored coffee with Irish cream taste, completely alcohol-free yet full of flavor.</p>
+                    </div>
+                </div>
+
+                <!-- Bites -->
+                <div class="menu-item" data-category="bites" data-aos="fade-up">
+                    <div class="menu-image">
+                        <i class="fas fa-bread-slice" style="color: #DAA520;"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Vada Pav</h3>
+                            <span class="menu-price">₹49</span>
+                        </div>
+                        <p class="menu-desc">Mumbai's favorite street food - spicy potato fritter in a bun with chutneys.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="bites" data-aos="fade-up" data-aos-delay="100">
+                    <span class="menu-badge">Spicy</span>
+                    <div class="menu-image">
+                        <i class="fas fa-pepper-hot" style="color: #DC143C;"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Samosa</h3>
+                            <span class="menu-price">₹39</span>
+                        </div>
+                        <p class="menu-desc">Crispy, golden samosas filled with spiced potatoes and peas.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="bites" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-image">
+                        <i class="fas fa-hamburger" style="color: #CD853F;"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Bun Maska</h3>
+                            <span class="menu-price">₹45</span>
+                        </div>
+                        <p class="menu-desc">Buttery, toasted bun - the perfect companion to your chai.</p>
+                    </div>
+                </div>
+
+                <!-- Maggie -->
+                <div class="menu-item" data-category="maggie" data-aos="fade-up">
+                    <span class="menu-badge">Hot</span>
+                    <div class="menu-image">
+                        <i class="fas fa-bacon" style="color: #FF6347;"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Masala Maggie</h3>
+                            <span class="menu-price">₹59</span>
+                        </div>
+                        <p class="menu-desc">Classic Maggie noodles with our special masala blend and veggies.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="maggie" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-image">
+                        <i class="fas fa-cheese" style="color: #FFD700;"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3 class="menu-title">Cheese Maggie</h3>
+                            <span class="menu-price">₹79</span>
+                        </div>
+                        <p class="menu-desc">Creamy Maggie loaded with melted cheese for the ultimate comfort food.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" style="color: var(--primary);">Why Choose Us</span>
+                <h2 class="section-title">The CSB Advantage</h2>
+                <p class="section-subtitle">
+                    We're not just a tea chain, we're a movement. Here's why millions choose Chai Sutta Bar.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Our signature Kulhads are biodegradable, support local artisans, and enhance the taste while reducing plastic waste.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-smile-beam"></i>
+                    </div>
+                    <h3>Youth Focused</h3>
+                    <p>Over 6,00,000 minutes spent by youth in our outlets daily. A smoke-free, alcohol-free space for genuine connections.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Presence</h3>
+                    <p>From Indore to Dubai, Nepal to Canada. We're taking Indian chai culture to the world, one Kulhad at a time.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Proven Success</h3>
+                    <p>100+ crore company built in 6 years without external investment. Featured in major media houses for our success story.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Franchise Section -->
+    <section class="franchise" id="franchise">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Franchise Opportunity</span>
+                <h2 class="section-title">Join The Revolution</h2>
+                <p class="section-subtitle">
+                    Be a part of India's fastest-growing chai chain. Low investment, high returns, complete support.
+                </p>
+            </div>
+
+            <div class="franchise-content">
+                <div class="franchise-info" data-aos="fade-right">
+                    <h3>Why Partner With CSB?</h3>
+                    <p>
+                        Join India's largest chai chain with a proven business model. Our franchise partners enjoy 
+                        massive margins and impeccable growth every year with our tested, tried, and high-ROI-driven system.
+                    </p>
+                    <p>
+                        With tea becoming the most consumed beverage globally, this industry has vast growth potential. 
+                        Take the first step and become part of a family that is ever-growing.
+                    </p>
+                    
+                    <div class="franchise-stats">
+                        <div class="franchise-stat">
+                            <span class="franchise-stat-number">108%</span>
+                            <span class="franchise-stat-label">Average ROI</span>
+                        </div>
+                        <div class="franchise-stat">
+                            <span class="franchise-stat-number">14-18</span>
+                            <span class="franchise-stat-label">Months Payback</span>
+                        </div>
+                        <div class="franchise-stat">
+                            <span class="franchise-stat-number">35-40%</span>
+                            <span class="franchise-stat-label">Profit Margin</span>
+                        </div>
+                        <div class="franchise-stat">
+                            <span class="franchise-stat-number">4%</span>
+                            <span class="franchise-stat-label">Royalty Fee</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Enquire Now
+                    </a>
+                </div>
+
+                <div class="investment-card" data-aos="fade-left">
+                    <span class="investment-badge">Total Investment</span>
+                    <div class="investment-amount">₹22-30 Lakhs</div>
+                    <p class="investment-note">
+                        Includes franchise fee, setup, equipment, and initial stock.<br>
+                        Location dependent pricing available.
+                    </p>
+                    <div style="text-align: left; margin-top: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--dark);">Franchise Process:</h4>
+                        <ul style="list-style: none; color: #666; font-size: 0.9rem; line-height: 2;">
+                            <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i> Token Amount Deposit</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i> R&D Team Location Visit</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i> Interior Setup & Design</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i> Agreement Signing (Indore HQ)</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i> 15-20 Days Staff Training</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i> Grand Opening Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations" id="locations">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Global Presence</span>
+                <h2 class="section-title">Find Us Worldwide</h2>
+                <p class="section-subtitle">
+                    From Indore to the world. Find us in 370+ cities across 5 countries.
+                </p>
+            </div>
+
+            <div class="locations-grid">
+                <div class="location-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="location-header">
+                        <i class="fas fa-flag"></i>
+                        <h3>India</h3>
+                    </div>
+                    <div class="location-body">
+                        <ul class="location-list">
+                            <li><i class="fas fa-map-marker-alt"></i> Indore, Madhya Pradesh (HQ)</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Delhi NCR</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 370+ Cities Nationwide</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="location-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="location-header" style="background: linear-gradient(135deg, #E07A5F, #D4A373);">
+                        <i class="fas fa-building"></i>
+                        <h3>UAE</h3>
+                    </div>
+                    <div class="location-body">
+                        <ul class="location-list">
+                            <li><i class="fas fa-map-marker-alt"></i> Dubai - Al Wasl Ivory</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Dubai - Meena Bazar, Bur Dubai</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Abu Dhabi</li>
+                            <li><i class="fas fa-info-circle"></i> First outlet opened 2021</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="location-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="location-header" style="background: linear-gradient(135deg, #2A9D8F, #264653);">
+                        <i class="fas fa-mountain"></i>
+                        <h3>Nepal</h3>
+                    </div>
+                    <div class="location-body">
+                        <ul class="location-list">
+                            <li><i class="fas fa-map-marker-alt"></i> Biratnagar - Tinpaini 2</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Near City Cinema</li>
+                            <li><i class="fas fa-info-circle"></i> First international outlet</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="location-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="location-header" style="background: linear-gradient(135deg, #E9C46A, #F4A261);">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Canada</h3>
+                    </div>
+                    <div class="location-body">
+                        <ul class="location-list">
+                            <li><i class="fas fa-map-marker-alt"></i> Surrey, BC</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Scott Road Location</li>
+                            <li><i class="fas fa-info-circle"></i> Now serving in North America</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What People Say</h2>
+                <p class="section-subtitle">
+                    Real stories from our customers and franchise partners across the globe.
+                </p>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                    <p class="testimonial-text">
+                        "The kulhad chai here takes me back to my childhood in India. The aroma of the earth mixed with the spices is simply unmatched. Best chai in Dubai!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <h4>Rahul Kumar</h4>
+                            <p>Customer, Dubai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <p class="testimonial-text">
+                        "Opening a Chai Sutta Bar franchise was the best business decision. The support from the team is incredible, and seeing customers smile every day is rewarding."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AS</div>
+                        <div class="author-info">
+                            <h4>Amit Sharma</h4>
+                            <p>Franchise Owner, Jaipur</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <p class="testimonial-text">
+                        "I love that they use kulhads instead of plastic. The chocolate tea is my favorite, and the vibe is perfect for hanging out with friends."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PP</div>
+                        <div class="author-info">
+                            <h4>Priya Patel</h4>
+                            <p>Student, Indore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Contact Us</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    Visit us, call us, or drop a message. We'd love to hear from you!
+                </p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Head Office</h4>
+                                <p>1st Floor, Redsquare, PU3 Commercial Scheme no 54,<br>Opposite C21 Mall, Indore, MP - 452001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 6262 3000 31</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@chaisuttabarindia.com<br>business@chaisuttabarindia.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Open 7 Days: 7:00 AM - 11:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+91 98765 43210" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Interested In</label>
+                            <select required>
+                                <option value="">Select an option</option>
+                                <option value="franchise">Franchise Enquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="career">Career</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Chai Sutta Bar®</h3>
+                <p>India's biggest chai chain serving authentic Kulhad Chai since 2016. We're on a mission to serve a wishful cup of tea in every corner of the world while preserving our environment.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#menu"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
+                    <li><a href="#franchise"><i class="fas fa-chevron-right"></i> Franchise</a></li>
+                    <li><a href="#locations"><i class="fas fa-chevron-right"></i> Locations</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Franchise</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Benefits</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Investment</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Process</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Apply Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Chai Sutta Bar®. All rights reserved. | Made with <i class="fas fa-heart"></i> for Chai Lovers</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS Animation Library
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Menu filter functionality
+        function filterMenu(category) {
+            const buttons = document.querySelectorAll('.category-btn');
+            const items = document.querySelectorAll('.menu-item');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(category) || 
+                    (category === 'all' && btn.textContent.includes('All'))) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            // Create a custom styled alert
+            const alertDiv = document.createElement('div');
+            alertDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 2rem 3rem;
+                border-radius: 20px;
+                box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+                z-index: 10000;
+                text-align: center;
+                border: 2px solid var(--primary);
+                max-width: 400px;
+                width: 90%;
+            `;
+            alertDiv.innerHTML = `
+                <div style="font-size: 4rem; color: var(--primary); margin-bottom: 1rem;">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Thank You!</h3>
+                <p style="color: #666; margin-bottom: 1.5rem;">We have received your message. Our team will get back to you soon.</p>
+                <button onclick="this.parentElement.remove(); document.querySelector('.overlay').remove();" 
+                        style="background: var(--primary); color: white; border: none; padding: 0.8rem 2rem; border-radius: 25px; cursor: pointer; font-weight: 600;">
+                    Close
+                </button>
+            `;
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                z-index: 9999;
+            `;
+            
+            document.body.appendChild(overlay);
+            document.body.appendChild(alertDiv);
+            e.target.reset();
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Counter animation for stats
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                const suffix = stat.textContent.replace(/[0-9]/g, '');
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + suffix;
+                    }
+                }, 30);
+            });
+        }
+
+        // Trigger stats animation when hero is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        heroObserver.observe(document.querySelector('.hero'));
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+  </html>
